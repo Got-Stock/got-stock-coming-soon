@@ -13,70 +13,136 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #000000;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        
-        .container {
-            text-align: center;
-            color: white;
             padding: 2rem;
         }
         
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+        .container {
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(255, 20, 147, 0.5);
+            text-align: center;
+            color: white;
+            max-width: 600px;
+            width: 100%;
         }
         
-        p {
+        .logo {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tagline {
             font-size: 1.25rem;
             margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .content {
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature p {
+            font-size: 0.95rem;
             opacity: 0.9;
         }
         
         .notify-form {
             display: flex;
             gap: 0.5rem;
-            max-width: 500px;
-            margin: 0 auto;
+            margin-top: 2.5rem;
         }
         
         input {
             flex: 1;
             padding: 1rem;
-            border: none;
-            border-radius: 5px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
             font-size: 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+        
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
         }
         
         button {
-            padding: 1rem 2rem;
-            background: #ff6b6b;
-            color: white;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: #ff1493;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         
         button:hover {
-            background: #ee5a52;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .launch-date {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Got-Stock</h1>
-        <p>Coming Soon - Your Next-Generation E-Commerce Marketplace</p>
+        <div class="logo">Got-Stock</div>
+        <div class="tagline">Your Next-Generation E-Commerce Marketplace</div>
+        
+        <div class="content">
+            <div class="feature">
+                <h3>🚀 Launching Soon</h3>
+                <p>Revolutionary platform connecting buyers and sellers worldwide</p>
+            </div>
+            
+            <div class="feature">
+                <h3>💎 Premium Experience</h3>
+                <p>Seamless shopping with cutting-edge technology</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🌟 Join the Waitlist</h3>
+                <p>Be the first to know when we launch and get exclusive early access</p>
+            </div>
+        </div>
+        
         <div class="notify-form">
             <input type="email" placeholder="Enter your email" required>
             <button type="submit">Notify Me</button>
+        </div>
+        
+        <div class="launch-date">
+            Coming in 2026 • Get ready for something amazing
         </div>
     </div>
 </body>
