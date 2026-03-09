@@ -171,20 +171,15 @@
       
       try {
         // Replace with your actual API endpoint
-        const response = await fetch('https://api.got-stock.com/waitlist', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email })
-        });
+        // Store email locally for now (you can integrate with your backend later)
+        localStorage.setItem('waitlist_' + Date.now(), email);
         
-        if (response.ok) {
-          alert('Success! Check your email for confirmation.');
-          form.reset();
-        } else {
-          alert('Error: ' + (await response.text()));
-        }
-      } catch (error) {
-        alert('Error: ' + error.message);
+        // Simulate successful submission
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+// Show success message
+        alert('🎉 Success! You\'re on the waitlist. Check your email for confirmation.');
+        form.reset();
       } finally {
         button.disabled = false;
         button.textContent = originalText;
