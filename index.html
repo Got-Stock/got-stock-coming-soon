@@ -170,16 +170,23 @@
       button.textContent = '...';
       
       try {
-        // Replace with your actual API endpoint
-        // Store email locally for now (you can integrate with your backend later)
-        localStorage.setItem('waitlist_' + Date.now(), email);
-        
-        // Simulate successful submission
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-// Show success message
-        alert('🎉 Success! You\'re on the waitlist. Check your email for confirmation.');
+// Call the API endpoint
+        const response = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+      
+      // Check if response is ok
+      if (!response.ok) {
+        throw new Error('Failed to join waitlist');
+      }
+      
+      const data = await response.json();        alert('🎉 Success! You\'re on the waitlist. Check your email for confirmation.');
         form.reset();
+      } catch (error) {
+        console.error('Error:', error);
+        alert('❌ Failed to join waitlist. Please try again later.');
       } finally {
         button.disabled = false;
         button.textContent = originalText;
