@@ -1,0 +1,21 @@
+{
+  "name": "got-stock-coming-soon",
+  "version": "1.0.0",
+  "description": "Got-Stock coming soon page with waitlist functionality",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "got-stock",
+    "waitlist",
+    "coming-soon"
+  ],
+  "author": "Got-Stock",
+  "license": "MIT"
+}
